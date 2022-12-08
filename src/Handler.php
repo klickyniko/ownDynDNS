@@ -35,13 +35,6 @@ final class Handler
             throw new RuntimeException('payload invalid');
         }
 
-        if (
-            $this->config->getUsername() !== $this->payload->getUser() ||
-            $this->config->getPassword() !== $this->payload->getPassword()
-        ) {
-            throw new RuntimeException('credentials wrong');
-        }
-
         if (is_readable($this->config->getLogFile())) {
             $this->log = json_decode(file_get_contents($this->config->getLogFile()), true);
         } else {

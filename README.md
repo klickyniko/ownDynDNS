@@ -5,13 +5,12 @@ Self-hosted dynamic DNS php script to update netcup DNS API from Router like AVM
 * Felix Kretschmer [@fernwerker](https://github.com/fernwerker)
 * Philipp Tempel [@philipptempel](https://github.com/philipptempel)
 * Branko Wilhelm [@b2un0](https://github.com/b2un0)
+* Nikolaus Schulze-Oechtering [@klickyniko](https://github.com/klickyniko)
 
 ## Usage
 ### Installation
 * Copy all files to your webspace
 * create a copy of `.env.dist` as `.env` and configure:
-  * `username` -> The username for your Router to authenticate (so not everyone can update your DNS)
-  * `password` -> password for your Router
   * `apiKey` -> API key which is generated in netcup CCP
   * `apiPassword` -> API password which is generated in netcup CCP
   * `customerId` -> your netcup Customer ID
@@ -22,12 +21,12 @@ Self-hosted dynamic DNS php script to update netcup DNS API from Router like AVM
 ### AVM FRITZ!Box Settings
 * Go to "Internet" -> "Freigaben" -> "DynDNS"
 * Choose "Benutzerdefiniert"
-* Update-URL: `https://<url of your webspace>/update.php?user=<username>&password=<pass>&ipv4=<ipaddr>&ipv6=<ip6addr>&domain=<domain>`
+* Update-URL: `https://<url of your webspace>/update.php?ipv4=<ipaddr>&ipv6=<ip6addr>&domain=<domain>`
   * only the url needs to be adjusted, the rest is automatically filled by your AVM FRITZ!Box
   * http or https is possible if valid SSL certificate (e.g. Let's Encrypt)
 * Domainname: `<host record that is supposed to be updated>`
-* Username: `<username as defined in .env file>`
-* Password: `<password as definied in .env file>`
+* Username: `<username for HTTP basic authentication>`
+* Password: `<password for HTTP basic authentication>`
 
 # run as cronjob on a **nix based device
 * see [examples](./examples)
@@ -38,4 +37,4 @@ Self-hosted dynamic DNS php script to update netcup DNS API from Router like AVM
 
 ## License
 Published under GNU General Public License v3.0  
-&copy; Felix Kretschmer, 2021
+&copy; Nikolaus Schulze-Oechtering, 2022

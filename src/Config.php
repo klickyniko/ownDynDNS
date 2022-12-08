@@ -8,16 +8,6 @@ final class Config
     /**
      * @var string
      */
-    private $username;
-
-    /**
-     * @var string
-     */
-    private $password;
-
-    /**
-     * @var string
-     */
     private $apiKey;
 
     /**
@@ -60,29 +50,11 @@ final class Config
     public function isValid()
     {
         return
-            !empty($this->username) &&
-            !empty($this->password) &&
             !empty($this->apiKey) &&
             !empty($this->apiPassword) &&
             !empty($this->customerId) &&
             !empty($this->logFile);
 
-    }
-
-    /**
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     /**

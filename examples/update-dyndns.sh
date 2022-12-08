@@ -16,11 +16,11 @@ IPV6=$(curl -6 -q v6.ident.me)
 echo ${IPV4}
 echo ${IPV6}
 
-# PAYLOAD_IPV4="force=${FORCE}&user=${USER}&password=${PASS}&ipv4=${IPV4}&domain=${DOMAIN}&mode=${MODE}"
+# PAYLOAD_IPV4="force=${FORCE}&ipv4=${IPV4}&domain=${DOMAIN}&mode=${MODE}"
 # curl -X POST --data "${PAYLOAD_IPV4}" ${SCRIPT}
 
-# PAYLOAD_IPV6="force=${FORCE}&user=${USER}&password=${PASS}&ipv6=${IPV6}&domain=${DOMAIN}&mode=${MODE"}
+# PAYLOAD_IPV6="force=${FORCE}&ipv6=${IPV6}&domain=${DOMAIN}&mode=${MODE"}
 # curl -X POST --data "${PAYLOAD_IPV6}" ${SCRIPT}
 
-PAYLOAD_BOTH="force=${FORCE}&user=${USER}&password=${PASS}&ipv4=${IPV4}&ipv6=${IPV6}&domain=${DOMAIN}&mode=${MODE}"
-curl -X POST --data "${PAYLOAD_BOTH}" ${SCRIPT}
+PAYLOAD_BOTH="force=${FORCE}&ipv4=${IPV4}&ipv6=${IPV6}&domain=${DOMAIN}&mode=${MODE}"
+curl -X POST -u "${USER}:${PASS}" --data "${PAYLOAD_BOTH}" ${SCRIPT}

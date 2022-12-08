@@ -1,0 +1,9 @@
+AuthType Basic
+AuthName "Passwort notwendig"
+AuthUserFile .htpasswd
+Require valid-user
+
+<FilesMatch "\.(env|json)$">
+	Order allow,deny
+	Deny from all
+</FilesMatch>

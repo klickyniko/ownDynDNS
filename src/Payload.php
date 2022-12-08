@@ -7,16 +7,6 @@ final class Payload
     /**
      * @var string
      */
-    private $user;
-
-    /**
-     * @var string
-     */
-    private $password;
-
-    /**
-     * @var string
-     */
     private $domain;
 
     /**
@@ -66,22 +56,6 @@ final class Payload
                     !empty($this->ipv6) && $this->isValidIpv6()
                 )
             );
-    }
-
-    /**
-     * @return string
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     /**
